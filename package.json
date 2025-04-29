@@ -1,0 +1,29 @@
+{
+  "name": "blog-web-app",
+  "version": "1.0.0",
+  "description": "Blog web application using Node.js, Express.js, and EJS.",
+  "keywords": [
+    "Node",
+    "Express",
+    "ejs"
+  ],
+  "homepage": "https://github.com/Skioulis/blog-web-app#readme",
+  "bugs": {
+    "url": "https://github.com/Skioulis/blog-web-app/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Skioulis/blog-web-app.git"
+  },
+  "license": "ISC",
+  "author": "Skioulis",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0"
+  }
+}
