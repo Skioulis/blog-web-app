@@ -5,16 +5,6 @@ const port = 3000;
 
 app.use(express.static("public"));
 
-app.get("/", (req, res) => {
-    res.render("index.ejs");
-})
-
-app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
-});
-
-// will use this later for the list of posts in main query
-
 const allPosts = [
     {
         id: 1,
@@ -67,3 +57,21 @@ const allPosts = [
         body: "Understanding different deployment strategies and hosting solutions."
     }
 ];
+
+app.get("/", (req, res) => {
+    res.render("index.ejs", {
+        posts: allPosts,
+    });
+})
+
+app.get("/about", (req, res) => {
+    res.render("about.ejs");
+})
+
+app.get("/contact", (req, res) => {
+    res.render("contact.ejs");
+})
+
+app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
+});
