@@ -1,0 +1,26 @@
+<%- include("partials/header") %>
+
+<main class="container">
+    <h1>Create post</h1>
+    <form action="/create" method="POST">
+        <div class="mb-3">
+            <label for="postTitle" class="form-label">Title</label>
+            <input type="text" name="title" class="form-control" id="postTitle" placeholder="Your title">
+        </div>
+        <div class="mb-3">
+            <label for="postBody" class="form-label">Content of your post</label>
+            <textarea class="form-control" name="body" id="postBody" rows="3"></textarea>
+        </div>
+        <div class="row g-2 justify-content-center">
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+            <div class="col-auto">
+                <button type="reset" class="btn btn-secondary">Clear</button>
+            </div>
+        </div>
+    </form>
+
+</main>
+
+<%- include("partials/footer") %>

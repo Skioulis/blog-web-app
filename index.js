@@ -1,9 +1,11 @@
 import express from "express";
+import bodyParser from "body-parser";
 
 const app = express();
 const port = 3000;
 
 app.use(express.static("public"));
+app.use(express.urlencoded({extended: true}));
 
 const allPosts = [
     {
@@ -70,6 +72,27 @@ app.get("/about", (req, res) => {
 
 app.get("/contact", (req, res) => {
     res.render("contact.ejs");
+})
+
+app.get("/post/:id", (req, res) => {
+    const post = allPosts.find(post => post.id === parseInt(req.params.id));
+    res.render("post.ejs", {
+        post: post
+    });
+})
+
+app.get("/create", (req, res) => {
+    res.render("create.ejs");
+})
+
+app.post("/create", (req, res) => {
+    const post = {
+        id: allPosts.length + 1,
+        title: req.body.title,
+        body: req.body.body
+    };
+    allPosts.push(post);
+    res.redirect("/");
 })
 
 app.listen(port, () => {
